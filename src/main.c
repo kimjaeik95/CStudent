@@ -5,7 +5,7 @@ int main() {
     int button;
 
     while(1) {
-        printf("1: 등록 2: 삭제 0: 종료\n");
+        printf("1: 등록 2: 삭제 3: 학생조회 0: 종료\n");
         printf("선택: ");
         scanf("%d", &button);
         while(getchar() != '\n');
@@ -16,6 +16,9 @@ int main() {
         fgets(s.phone,sizeof(s.phone), stdin); // 빈 구조체에 내가 찾을 핸드폰번호만 저장
         while(getchar() != '\n');
         delete_student(&s);
+    } else if (button == 3) {
+        printf("학생을 전체 조회합니다.\n");
+        allList_student();
     } else if (button == 0) {
         printf("프로그램 종료\n");
         break;
